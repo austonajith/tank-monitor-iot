@@ -76,3 +76,82 @@ It provides both **local LED display** and **Wi-Fi-based monitoring** — perfec
 
 Each tank uses 5 stainless-steel probes connected at different water heights:
 
+100% ────> GPIO27 / GPIO5<br>
+70% ────> GPIO26 / GPIO4<br>
+50% ────> GPIO25 / GPIO13<br>
+30% ────> GPIO33 / GPIO12<br>
+10% ────> GPIO32 / GPIO14<br>
+GND ────> Common ground probe<br>
+
+
+---
+
+## 📡 Communication Format
+
+ESP32 sends data over serial every second in this format:
+
+
+Tank1:50%|Tank2:100%
+
+
+UNO parses this string and updates the LED levels:
+- LEDs light up according to percentage
+- Bottom LED blinks if tank level = 0%
+
+---
+
+## 🌐 Wi-Fi Dashboard
+
+When Wi-Fi is enabled (via long press on ESP32 BOOT button):
+- **Access Point Mode:** If no saved Wi-Fi credentials  
+- **Client Mode:** Connects to saved Wi-Fi network  
+- Webpage available at  
+
+
+http://<esp32-ip>/
+
+- JSON data available at  
+
+
+http://<esp32-ip>/data
+
+Example JSON response:
+{
+"tank1": 50,
+"tank2": 100
+} 
+
+🔧 OTA (Over-the-Air) Updates
+
+Once connected to Wi-Fi, the ESP32 supports Arduino OTA updates.
+You can upload new firmware wirelessly using the Arduino IDE → Port → Network Port → AJI-TankMonitor.
+
+🏗️ Enclosure Setup
+
+ESP32 Unit: Mounted inside a waterproof metal box on the terrace.
+
+UNO Display: Mounted in a wall switch box on the ground floor for easy viewing.
+
+(Add your photos or diagrams here)
+
+📸 Photos
+Terrace Unit (ESP32)	Ground Unit (UNO + LEDs)
+
+	
+🧾 Future Improvements
+
+🔧 Replace UNO with ATtiny85 or STM32 Blue Pill for cost and space optimization
+
+📶 Add LoRa or ESP-NOW for wireless long-range data transfer
+
+📱 Integrate with Home Assistant or Blynk App for mobile notifications
+
+❤️ Acknowledgements
+
+Project designed and built by AJI
+Special thanks to the open-source Arduino and ESP32 community.
+
+🧠 License
+
+This project is open-sourced under the MIT License — you’re free to use, modify, and share it with credit.
+
