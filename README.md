@@ -132,10 +132,13 @@ ESP32 Unit: Mounted inside a waterproof metal box on the terrace.
 
 UNO Display: Mounted in a wall switch box on the ground floor for easy viewing.
 
-(Add your photos or diagrams here)
 
 📸 Photos
-Terrace Unit (ESP32)	Ground Unit (UNO + LEDs)
+![Circuit Diagram](screenshots/circuit_image%20(3).png)
+![esp32](screenshots/PXL_20251020_042112215.MP.jpg)
+[Arduino Uno](screenshots/PXL_20251020_044440405~2.mp4)
+[Output](screenshots/PXL_20251020_044114553~3.mp4)
+🎬 [Watch Demo Video](screenshots/Arduino%20Tank%20Monitor.mp4)
 
 	
 🧾 Future Improvements
